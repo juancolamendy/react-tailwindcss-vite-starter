@@ -2,6 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import Routes from "./Routes";
 
+import './styles/index.css';
 import './styles/main.css';
 
 const App = () => {

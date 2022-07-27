@@ -5,7 +5,7 @@ function Index() {
 
   return (
     <div className="App">
-      <h1>Vite + React + Tailwind </h1>
+      <h1 className="text-4xl font-bold underline">Vite + React + Tailwind </h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
