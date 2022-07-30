@@ -4,7 +4,7 @@ function Index() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
+    <div>
       <h1 className="text-4xl font-bold underline">Vite + React + Tailwind </h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>

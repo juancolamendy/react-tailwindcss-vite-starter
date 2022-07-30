@@ -1,4 +1,7 @@
+import React from "react";
 import { Routes as ReactRouterRoutes, Route } from "react-router-dom";
+
+const EmptyLayout = ({ children }) => <React.Fragment>{children}</React.Fragment>;
 
 /**
  * File-based routing.
@@ -16,9 +19,10 @@ import { Routes as ReactRouterRoutes, Route } from "react-router-dom";
  */
 export default function Routes({ pages }) {
   const routes = useRoutes(pages);
-  const routeComponents = routes.map(({ path, component: Component }) => (
-    <Route key={path} path={path} element={<Component />} />
-  ));
+  const routeComponents = routes.map(({ path, component: Component }) => {
+    const Layout = Component.Layout || EmptyLayout;
+    return ( <Route key={path} path={path} element={<Layout><Component /></Layout>} /> );
+  });
 
   const NotFound = routes.find(({ path }) => path === "/notfound").component;
 
